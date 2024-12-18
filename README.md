@@ -38,3 +38,8 @@ go run main.go server
 ```shell
 go get -u github.com/gin-gonic/gin
 ```
+
+## 容器构建
+```shell
+ docker build -t bookinfo:v0.1 .
+```
