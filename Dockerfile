@@ -9,7 +9,7 @@ COPY . .
 RUN go env -w GOPROXY=https://goproxy.io,direct
 
 # 下载依赖
-RUN rm go.sum && go mod tidy
+RUN go mod tidy
 
 # 构建可执行文件
 RUN go build -o go_bk
