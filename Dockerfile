@@ -3,7 +3,7 @@ FROM golang:1.22.2 AS builder
 WORKDIR /build
 
 # 拷贝项目文件
-COPY ./* ./build
+COPY . .
 
 # 设置一个代理
 RUN go env -w GOPROXY=https://goproxy.io,direct
