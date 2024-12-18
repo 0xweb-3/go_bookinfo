@@ -6,7 +6,7 @@ WORKDIR /
 RUN go env -w GOPROXY=https://goproxy.cn,direct
 
 # 拷贝 go.mod 和 go.sum 文件
-COPY go.mod go.sum ./
+COPY go.mod ./
 
 # 下载依赖
 RUN go mod tidy
