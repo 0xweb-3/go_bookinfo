@@ -23,6 +23,9 @@ WORKDIR /app
 # 从构建阶段复制编译好的二进制文件
 COPY --from=builder /build/go_bk .
 
+COPY . .
+
+
 # 暴露应用运行的端口（可选）
 EXPOSE 8080
 
