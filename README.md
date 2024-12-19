@@ -42,4 +42,7 @@ go get -u github.com/gin-gonic/gin
 ## 容器构建
 ```shell
 docker build -t bookinfo:v0.1 .
+docker run -p 8082:8080 -d bookinfo:v0.1
 ```
+
+http://124.221.88.70:8082/
