@@ -25,7 +25,6 @@ COPY --from=builder /build/go_bk .
 
 COPY . .
 
-
 # 暴露应用运行的端口（可选）
 EXPOSE 8080
 
