@@ -41,6 +41,9 @@ go get -u github.com/gin-gonic/gin
 
 ## 容器构建
 ```shell
+
+docker build -t harbor.fishline.top/k8s-test/bookinfo:v0.1 .
+
 docker build -t bookinfo:v0.1 .
 docker run -p 7082:8080 -d bookinfo:v0.1
 ```
