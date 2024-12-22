@@ -21,7 +21,7 @@ FROM alpine:3.20
 WORKDIR /app
 
 # 从构建阶段复制编译好的二进制文件
-COPY --from=builder /build/go_bk .
+COPY --from=builder /build/go_bk /app/go_bk
 
 COPY . .
 
