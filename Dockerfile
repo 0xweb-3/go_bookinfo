@@ -16,7 +16,7 @@ RUN go mod tidy
 RUN go build -o go_bk
 
 # 第二个阶段：运行阶段
-FROM debian:bookworm-slim
+FROM alpine:3.20
 
 WORKDIR /app
 

@@ -56,4 +56,6 @@ http://124.221.88.70:7082/
 ```shell
 cd deploy/ kubernetes 
 kubectl apply -f pod.yaml
+
+kubectl get pod
 ```
