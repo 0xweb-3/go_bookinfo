@@ -58,4 +58,7 @@ cd deploy/ kubernetes
 kubectl apply -f pod.yaml
 
 kubectl get pod
+
+# 移除pod
+kubectl delete pod bookinfo 
 ```

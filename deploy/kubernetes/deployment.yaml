@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookinfo
+  namespace: default
+spec:
+  replicas: 3 #根据模版启动3个pod
+  selector:
+    matchLabels:
+      app: bookinfo
+  template:
+    metadata:
+      labels:
+        app: bookinfo
+    spec:
+      imagePullSecrets:
+        - name: secret-harbor-docker
+      containers:
+        - name: bookinfo
+          image: harbor.fishline.top/k8s-test/bookinfo:v0.2
+          ports:
+            - name: web
+              containerPort: 8080 # 容器端口
