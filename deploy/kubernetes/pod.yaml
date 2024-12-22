@@ -15,7 +15,7 @@ spec:
     - name: secret-harbor-docker
   containers:
     - name: bookinfo
-      image: harbor.fishline.top/k8s-test/bookinfo:v0.1
+      image: harbor.fishline.top/k8s-test/bookinfo:v0.2
       ports:
         - name: web
           containerPort: 8080 # 容器端口
