@@ -12,8 +12,8 @@ RUN go env -w GOPROXY=https://goproxy.io,direct
 # 下载依赖
 RUN go mod tidy
 
-# 构建可执行文件
-RUN go build -o go_bk
+# 构建静态可执行文件
+RUN CGO_ENABLED=0 GOOS=linux go build -o go_bk
 
 # 第二个阶段：运行阶段
 FROM alpine:3.20
@@ -23,7 +23,8 @@ WORKDIR /app
 # 从构建阶段复制编译好的二进制文件
 COPY --from=builder /build/go_bk /app/go_bk
 
-COPY . .
+# 添加执行权限
+RUN chmod +x /app/go_bk
 
 # 暴露应用运行的端口（可选）
 EXPOSE 8080
