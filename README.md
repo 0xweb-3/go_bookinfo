@@ -49,3 +49,11 @@ docker run -p 7082:8080 -d bookinfo:v0.1
 ```
 
 http://124.221.88.70:7082/
+
+
+## kubectl 使用
+
+```shell
+cd deploy/ kubernetes 
+kubectl apply -f pod.yaml
+```

@@ -1,1 +1,22 @@
+# 一行命令创建harbor登录密钥
+#kubectl create secret docker-registry secret-harbor-docker \
+#  --docker-username=admin \
+#  --docker-password=Harbor12345 \
+#  --docker-server=harbor.fishline.top
+
+
 apiVersion: v1
+kind: Pod
+metadata:
+  name: bookinfo
+  namespace: default
+spec:
+  imagePullSecrets:
+    - name: secret-harbor-docker
+  containers:
+    - name: bookinfo
+      image: harbor.fishline.top/k8s-test/bookinfo:v0.1
+      ports:
+        - name: web
+          containerPort: 8080 # 容器端口
+          hostPort: 9080 # 宿主机端口
