@@ -7,7 +7,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    - host: xxxx # 设置为访问域名
+      http:
         paths:
           - path: /bookinfo
             pathType: Prefix
